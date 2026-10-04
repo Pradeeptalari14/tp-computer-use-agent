@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: computer-use-sandbox
+  namespace: agent-workloads
+  labels:
+    app.kubernetes.io/name: computer-use-sandbox
+    app.kubernetes.io/part-of: autonomous-agent-fleet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: computer-use-sandbox
+  template:
+    metadata:
+      labels:
+        app: computer-use-sandbox
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: xvfb-desktop
+          image: ghcr.io/pradeeptalari14/computer-use-sandbox:latest
+          ports:
+            - containerPort: 8080
+              name: noVnc
+            - containerPort: 5900
+              name: vnc
+          resources:
+            requests:
+              cpu: "2000m"
+              memory: "4Gi"
+            limits:
+              cpu: "4000m"
+              memory: "8Gi"
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: computer-use-sandbox-svc
+  namespace: agent-workloads
+spec:
+  selector:
+    app: computer-use-sandbox
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      name: novnc
