@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # 🖥️ Autonomous Computer-Use & OS Operator Agent Studio
 
 [![CI SRE Validation](https://github.com/Pradeeptalari14/tp-computer-use-agent/actions/workflows/computer-use-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-computer-use-agent/actions)
@@ -194,3 +197,6 @@ tp-computer-use-agent/
 
 - **License:** [MIT License](LICENSE)
 - **Attribution:** Maintained by **[Talari Pradeep](https://talaripradeep.info/)** · AI Infrastructure & Platform SRE Lead
+
+---
+*Synchronized with [Autonomous Computer-Use & OS Operator Agent Studio Studio](https://pradeeptalari.me/tools/computer-use-agent/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
